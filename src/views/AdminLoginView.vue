@@ -29,17 +29,13 @@
             placeholder="ENTER AUTHORIZATION CODE"
             class="mb-4"
           />
-          <input
-            type="password"
-            placeholder="ENTER ENCRYPTION KEY"
-            class="w-full bg-gray-900 border border-cyan-500/30 focus:border-cyan-500/70 px-4 py-3 text-cyan-100 placeholder-cyan-500/50 outline-none transition-all duration-300"
-          />
-          <!-- <TerminalInput
+
+          <TerminalInput
             v-model="password"
             label="ACCESS KEY"
             placeholder="ENTER ENCRYPTION KEY"
             type="password"
-          /> -->
+          />
 
           <div class="pt-2">
             <NeonButton @click="login" :disabled="loading" class="w-full">
