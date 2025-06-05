@@ -107,7 +107,7 @@ const login = async () => {
   error.value = null;
 
   try {
-    const response = await fetch(`${import.meta.env.REACT_APP_API_URL}/api/admin/login`, {
+    const response = await fetch(`${import.meta.env.VITE_APP_API_URL}/api/admin/login`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ username: username.value, password: password.value })
