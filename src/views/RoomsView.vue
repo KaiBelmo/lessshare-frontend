@@ -50,7 +50,7 @@
             <p class="text-xs text-cyan-400 mb-1">ROOM ACCESS</p>
             <div class="flex items-center">
               <input 
-                :value="`${import.meta.env.VITE_APP_FRONTEND_URL}/room/${room.roomId}`"
+                :value="`${baseUrl}/room/${room.roomId}`"
                 readonly
                 class="flex-1 bg-gray-900 text-cyan-200 text-xs p-2 rounded-l border border-cyan-500/30 truncate"
               >
@@ -110,6 +110,9 @@ const error = ref(null);
 const showCreateModal = ref(false);
 const newRoomName = ref('');
 const toastMessage = ref(null);
+
+const baseUrl = import.meta.env.VITE_APP_FRONTEND_URL;
+
 
 userStore.initialize();
 
