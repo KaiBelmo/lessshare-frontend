@@ -564,7 +564,7 @@ const remotePeers = ref([]);
 const MAXIMUM_MESSAGE_SIZE = 65535;
 const END_OF_FILE_MESSAGE = "EOF";
 
-const socket = io(`${import.meta.env.VUE_APP_API_URL}`, {
+const socket = io(`${import.meta.env.VITE_APP_API_URL}`, {
   reconnectionAttempts: 5,
   reconnectionDelay: 1000,
   autoConnect: true,
@@ -584,7 +584,7 @@ const simulateConnectionProgress = () => {
 async function addPeerToRoom(peerId) {
   try {
     const response = await fetch(
-      `${import.meta.env.VUE_APP_API_URL}/api/rooms/${roomId.value}/peers`,
+      `${import.meta.env.VITE_APP_API_URL}/api/rooms/${roomId.value}/peers`,
       {
         method: "PUT",
         headers: {
@@ -612,7 +612,7 @@ async function addPeerToRoom(peerId) {
 async function fetchRoomDetails() {
   try {
     const response = await fetch(
-      `${import.meta.env.VUE_APP_API_URL}/api/rooms/${roomId.value}`,
+      `${import.meta.env.VITE_APP_API_URL}/api/rooms/${roomId.value}`,
       {
         headers: { Authorization: `Bearer ${userStore.token}` },
       }

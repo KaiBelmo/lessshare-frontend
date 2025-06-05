@@ -73,8 +73,10 @@ const saveUsername = async () => {
   isLoading.value = true
   error.value = ''
 
+  console.log(`${import.meta.env.VITE_APP_API_URL}/api/users`)
+
   try {
-    const response = await fetch(`${import.meta.env.VUE_APP_API_URL}/api/users`, {
+    const response = await fetch(`${import.meta.env.VITE_APP_API_URL}/api/users`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

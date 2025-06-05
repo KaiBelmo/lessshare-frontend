@@ -1014,10 +1014,10 @@ watch([roomSearch, filteredRooms], () => {
 const fetchData = async () => {
   try {
     const [usersResponse, roomsResponse] = await Promise.all([
-      fetch(`${import.meta.env.VUE_APP_API_URL}/api/admin/users`, {
+      fetch(`${import.meta.env.VITE_APP_API_URL}/api/admin/users`, {
         headers: { Authorization: `Bearer ${userStore.token}` },
       }),
-      fetch(`${import.meta.env.VUE_APP_API_URL}/api/admin/rooms`, {
+      fetch(`${import.meta.env.VITE_APP_API_URL}/api/admin/rooms`, {
         headers: { Authorization: `Bearer ${userStore.token}` },
       }),
     ]);

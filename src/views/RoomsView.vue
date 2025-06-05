@@ -134,7 +134,7 @@ const fetchRooms = async () => {
     loading.value = true;
     error.value = null;
 
-    const userResponse = await fetch(`${import.meta.env.VUE_APP_API_URL}/api/users/me`, {
+    const userResponse = await fetch(`${import.meta.env.VITE_APP_API_URL}/api/users/me`, {
       headers: {
         'Authorization': `Bearer ${userStore.token}`
       }
@@ -146,7 +146,7 @@ const fetchRooms = async () => {
     }
     const user = await userResponse.json();
 
-    const roomsResponse = await fetch(`${import.meta.env.VUE_APP_API_URL}/api/users/${user.id}/rooms`, {
+    const roomsResponse = await fetch(`${import.meta.env.VITE_APP_API_URL}/api/users/${user.id}/rooms`, {
       headers: {
         'Authorization': `Bearer ${userStore.token}`
       }
@@ -176,7 +176,7 @@ const confirmCreateRoom = async () => {
   }
 
  try {
-    const response = await fetch(`${import.meta.env.VUE_APP_API_URL}/api/rooms`, {
+    const response = await fetch(`${import.meta.env.VITE_APP_API_URL}/api/rooms`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
